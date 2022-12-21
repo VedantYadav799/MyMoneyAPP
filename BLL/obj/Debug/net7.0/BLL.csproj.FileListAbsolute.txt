@@ -1,0 +1,17 @@
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\bin\Debug\net7.0\BLL.deps.json
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\bin\Debug\net7.0\BLL.dll
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\bin\Debug\net7.0\BLL.pdb
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.csproj.AssemblyReference.cache
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.AssemblyInfoInputs.cache
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.AssemblyInfo.cs
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.csproj.CoreCompileInputs.cache
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.dll
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\refint\BLL.dll
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.pdb
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\ref\BLL.dll
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\bin\Debug\net7.0\BOL.dll
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\bin\Debug\net7.0\DAL.dll
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\bin\Debug\net7.0\BOL.pdb
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\bin\Debug\net7.0\DAL.pdb
+D:\.NetCORE\MoneyManager\MyMoneyAPP\BLL\obj\Debug\net7.0\BLL.csproj.CopyComplete

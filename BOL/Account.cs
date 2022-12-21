@@ -1,0 +1,10 @@
+﻿namespace BOL;
+public class Account
+{
+    public int Id {get;set;}
+    public string FirstName{get;set;}
+    public string LastName{get;set;}
+    public double CreditBalance{get;set;}
+    public double DebitBalance{get; set;}
+
+}
