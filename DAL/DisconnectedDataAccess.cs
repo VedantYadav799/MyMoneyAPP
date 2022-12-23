@@ -1,6 +1,4 @@
-﻿
-using System.Runtime.InteropServices;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
 
 using BOL;
@@ -29,17 +27,14 @@ public class DisconnectedDataAccess
                 acc.Id =int.Parse(row["id"].ToString());
                 acc.FirstName =row["firstname"].ToString();
                 acc.LastName =row["lastname"].ToString();
-                acc.CreditBalance =int.Parse(row["creditbalance"].ToString());
-                acc.DebitBalance =int.Parse(row["debitbalance"].ToString());
-                allAccounts.Add(acc);
+                acc.CreditBalance =double.Parse(row["creditbalance"].ToString());
+                acc.DebitBalance =double.Parse(row["debitbalance"].ToString());
+                allAccounts.Add(acc );
             }
-
-
         }
         catch(MySqlException ex)
         {
             string msg = ex.Message;
-
         }
         
         return allAccounts;
@@ -68,12 +63,11 @@ public class DisconnectedDataAccess
             account.CreditBalance =int.Parse(row["creditbalance"].ToString());
             account.DebitBalance =int.Parse(row["debitbalance"].ToString());
             }
-            
+
         }
    catch(MySqlException ex)
         {
             string msg = ex.Message;
-
         }
         return account;
     }
@@ -81,7 +75,6 @@ public class DisconnectedDataAccess
     public static bool Update(Account account)
     {
         bool status = false;
-        
         MySqlConnection con = new MySqlConnection(conString);
         MySqlCommand cmd = new MySqlCommand();
         cmd.Connection = con;
@@ -89,6 +82,7 @@ public class DisconnectedDataAccess
         try
         {
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(da);
             DataSet ds = new DataSet();
             da.Fill(ds);
             DataTable Acctable = ds.Tables[0];
@@ -96,7 +90,7 @@ public class DisconnectedDataAccess
             columns[0] = Acctable.Columns["id"];
             Acctable.PrimaryKey = columns;
             DataRowCollection rowCollection = Acctable.Rows;
-
+  
             DataRow foundRow = rowCollection.Find(account.Id);
             foundRow["firstname"] = account.FirstName;
             foundRow["lastname"] = account.LastName;
@@ -104,7 +98,6 @@ public class DisconnectedDataAccess
             foundRow["creditbalance"] = account.CreditBalance; 
             da.Update(ds);
             status = true;
-
         }
         catch(MySqlException ex)
         {
@@ -115,7 +108,72 @@ public class DisconnectedDataAccess
 
     }
 
+    public static bool Delete(int id)
+    {
+        bool status = false;
+        MySqlConnection con = new MySqlConnection(conString);
+        MySqlCommand cmd = new MySqlCommand();
+        cmd.Connection = con;
+        cmd.CommandText= "select * from account";
+        try
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(da);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            DataTable acctable = ds.Tables[0];
+            DataColumn []column = new DataColumn[1];
+            column[0] = acctable.Columns["id"];
+            acctable.PrimaryKey = column;
+            DataRowCollection rowCollection = acctable.Rows;
 
+            DataRow foundrow = rowCollection.Find(id);
+            foundrow.Delete();
+            da.Update(ds);
+            status = true;
+
+        }
+        catch(MySqlException ex)
+        {
+            string msg = ex.Message;
+        }
+        return status;
+    }
+
+    public static bool Insert(Account account)
+    {
+        bool status = false;
+        MySqlConnection con = new MySqlConnection(conString);
+        MySqlCommand cmd = new MySqlCommand();
+        cmd.Connection = con;
+        cmd.CommandText = "select * from account";
+        try
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(da);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            DataTable acctable = ds.Tables[0];
+            DataRow newrow = acctable.NewRow();
+            newrow["id"] =account.Id;
+            newrow["firstname"] =account.FirstName;
+            newrow["lastname"] =account.LastName;
+            newrow["creditbalance"] =account.CreditBalance;
+            newrow["debitbalance"] =account.DebitBalance;
+        
+            DataRowCollection rowCollection = acctable.Rows;
+            rowCollection.Add(newrow);
+            da.Update(ds);
+        }
+        catch(MySqlException ex)
+        {
+            string msg = ex.Message;
+        }
+
+        return status;
+
+    }
 }
 
 

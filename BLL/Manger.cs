@@ -3,10 +3,9 @@ using BOL;
 using DAL;
 public class Manager
 {
-    public static List<Account> GetAll()
+    public static void GetAll()
     {
-        List<Account> accounts = DisconnectedDataAccess.GetAll();
-        return accounts;
+        
     }
 
     public static Account GetById(int id)
@@ -14,5 +13,6 @@ public class Manager
         Account account = DisconnectedDataAccess.Get(id);
         return account;
     }
+    
 
 }

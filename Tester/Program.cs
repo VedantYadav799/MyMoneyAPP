@@ -15,23 +15,27 @@ using BLL;
         Console.WriteLine(account.Id+" "+ account.FirstName + " " + account.LastName);
     }
 
-int id =2;
-    Account  acc = DisconnectedDataAccess.Get(id);
+// int id =2;
+//     Account  acc = DisconnectedDataAccess.Get(id);
    
-  Console.WriteLine("by given id"+ acc.FirstName + " " + acc.LastName);
+//   Console.WriteLine("by given id: "+ acc.FirstName + " " + acc.LastName);
 
-// Account account1 = new Account();
-// account1.Id = 1;
-// account1.FirstName = "vivek";
-// account1.LastName = "sharma";
+Account account1 = new Account();
+account1.Id = 1;
+account1.FirstName = "vedant";
+account1.LastName = "yadav";
+// account1.CreditBalance = 0;
+// account1.DebitBalance = 0;
 
-// DisconnectedDataAccess.Update(account1);
+ DisconnectedDataAccess.Insert(account1);
+// DisconnectedDataAccess.Delete(4);
 
 
-//  Console.WriteLine("after updation");
-//  List<Account> allaccountss =Manager.GetAll();
+ Console.WriteLine("after insertion");
+ List<Account> allaccountss =Manager.GetAll();
 
-//     foreach(Account acc in allaccountss)
-//     {
-//         Console.WriteLine(acc.Id+" "+ acc.FirstName + " " + acc.LastName);
-//     }
+    foreach(Account acc in allaccountss)
+    {
+        Console.WriteLine(acc.Id+" "+ acc.FirstName + " " + acc.LastName+ " " + acc.CreditBalance + " " + acc.DebitBalance);
+    }
+  
