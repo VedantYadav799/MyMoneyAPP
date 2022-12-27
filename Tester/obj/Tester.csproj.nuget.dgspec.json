@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\Tester\\Tester.csproj": {}
+    "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\tester\\Tester.csproj": {}
   },
   "projects": {
     "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\BLL\\BLL.csproj": {
@@ -180,14 +180,14 @@
         }
       }
     },
-    "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\Tester\\Tester.csproj": {
+    "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\tester\\Tester.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\Tester\\Tester.csproj",
+        "projectUniqueName": "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\tester\\Tester.csproj",
         "projectName": "Tester",
-        "projectPath": "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\Tester\\Tester.csproj",
+        "projectPath": "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\tester\\Tester.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\Tester\\obj\\",
+        "outputPath": "D:\\.NetCORE\\MoneyManager\\MyMoneyAPP\\tester\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

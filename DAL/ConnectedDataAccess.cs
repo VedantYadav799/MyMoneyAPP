@@ -144,8 +144,9 @@ public class ConnectedDataAccess
 
         }
 
-        public static void delete(int id)
+        public static bool delete(int id)
         {
+        bool status = false;
         MySqlConnection con = new MySqlConnection();
         con.ConnectionString = connectionString;
         try
@@ -154,6 +155,7 @@ public class ConnectedDataAccess
             MySqlCommand command = new MySqlCommand(query, con);
             con.Open();
             command.ExecuteNonQuery();
+            status = true;
         }
         catch (Exception e)
         {
@@ -163,6 +165,7 @@ public class ConnectedDataAccess
         {
             con.Close();
         }
+            return status;
         }
 }
 
